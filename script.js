@@ -1,4 +1,5 @@
 let options = ["Rock", "Paper", "Scissor"];
+let permissionToExit;
 let roundWin = "";
 let userScore = 0;
 let comScore = 0;
@@ -37,15 +38,16 @@ function getPlayerChoice() {
 function permissionExit() {
     let grant = confirm("Are you sure? You want to cancel");
     if(grant) {
-        return console.log("You cancel, successfully.🥹")
+        permissionToExit = "You cancel, successfully.🥹";
+        return permissionToExit;
     } 
     else {
         getPlayerChoice();
     }
 }
 
+// function game play round
 function playRound(userChoice, comChoice) {
-
     if (userChoice === comChoice) {
         console.log("It's a draw! ")
     }
@@ -80,7 +82,11 @@ function playRound(userChoice, comChoice) {
         }
     }
     
-    console.log(addScore(roundWin));
+    if(permissionToExit != "You cancel, successfully.🥹") {
+        console.log(addScore(roundWin));
+    }
+
+    return isGameOver();
 }
 
 // add score and return a string of score.
@@ -99,12 +105,13 @@ function addScore(roundWinner) {
 // return a winner 
 function isGameOver() {
     if(userScore === 5) {
-        console.log("🎉🎉You Win the battle!!🎉🎉")
-        return true;    
+        return "🎉🎉You Win the battle!!🎉🎉";    
     }
     else if(comScore === 5) {
-        console.log("😢😢Computer Win the battle!!🥲🥲")
-        return true;
+        return "😢😢Computer Win the battle!!🥲🥲";
+    }
+    else if (permissionToExit === "You cancel, successfully.🥹") {  //if permission to exit is true return the execution!
+        return "You cancel❌";
     }
 }
 
@@ -112,4 +119,9 @@ function game() {
     while(!isGameOver()) {
         playRound(getPlayerChoice(), getComputerChoice());
     }
+
+    // Return the winner
+    return isGameOver();
 }
+
+
