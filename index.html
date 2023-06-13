@@ -9,8 +9,52 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button class="buttons rockBtn">🪨</button>
-    <button class="buttons paperBtn">📃</button>
-    <button class="buttons scissorBtn">✂️</button>
+    <header>
+      <h1>WELCOME TO THE ROCK PAPER & SCISSOR</h1>
+    </header>
+    <main>
+      <div class="left-side">
+        <div id="scoreboard">
+          <h1 id="winner" style="margin-bottom: 0; font-size: 50px">
+            Choose your weapon
+          </h1>
+          <h4
+            id="round-message"
+            style="margin-top: 0; font-size: 20px; font-weight: 800">
+            First 5 points will win!
+          </h4>
+        </div>
+        <div class="scores-container">
+          <div class="player-container" id="player">
+            <div class="sign">❔</div>
+            <div class="player-info">
+              <p class="score-title">Player Score</p>
+              <p class="score">0</p>
+            </div>
+          </div>
+          <div class="computer-container" id="computer">
+            <div class="sign">❔</div>
+            <div class="computer-info">
+              <p class="score-title">Enemy Score</p>
+              <p class="score">0</p>
+            </div>
+          </div>
+        </div>
+        <div id="allButtons">
+          <button class="buttons rockBtn">ROCK</button>
+          <button class="buttons scissorBtn">SCISSOR</button>
+          <button class="buttons paperBtn">PAPER</button>
+        </div>
+      </div>
+      <div class="right-side">
+        <div id="game-log">
+          <h1 class="title">GAME-LOG</h1>
+          <p class="result"></p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Copyright ©BeaioeoIII 2023</p>
+    </footer>
   </body>
 </html>

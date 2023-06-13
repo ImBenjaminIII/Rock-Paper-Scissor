@@ -1,10 +1,109 @@
 body {
+  padding: 0;
+  margin: 0;
   display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: gray;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  flex-grow: 0;
+}
+
+header h1 {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline;
+  font-size: 50px;
+}
+
+footer {
+  background-color: gray;
+  text-align: center;
+  color: white;
+  flex-grow: 0;
+}
+
+main {
+  flex-grow: 1;
+  background-color: gainsboro;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+}
+.left-side {
+  flex-grow: 1;
+}
+.right-side {
+  flex-basis: 250px;
+  display: flex;
+  padding: 50px;
+}
+
+#game-log {
+  border: 2px solid black;
+  width: 300px;
+  min-height: 100px;
+  padding: 20px;
+  border-radius: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#game-log .title {
+  text-align: center;
+  border-bottom: 2px solid black;
+  margin: 0;
+}
+
+#scoreboard {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .buttons {
-  width: 200px;
-  height: 100px;
+  border-radius: 5px;
+  font-weight: 900;
+  color: white;
   font-size: xx-large;
+  background-color: burlywood;
+}
+
+.scores-container {
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: space-evenly;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.scores-container {
+  text-align: center;
+}
+
+.sign {
+  font-size: 100px;
+}
+
+.score {
+  margin-top: 0;
+  font-weight: 700;
+}
+
+.score-title {
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#allButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
