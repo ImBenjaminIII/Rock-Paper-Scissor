@@ -6,7 +6,24 @@ let computerSign = document.querySelector('#computer .sign');
 let roundMessage = document.querySelector('#round-message');
 let resultWinner = document.querySelector('#winner');
 let gamelogResult = document.querySelector('#game-log .result');
+const modalPreview = document.querySelector('#modal');
+const modalResult = document.querySelector('#modal .result');
+const overlay = document.querySelector('#overlay');
+const clsBtnModal = document.querySelector('.close-modal');
+const playAgain = document.querySelector('.play-again');
 
+playAgain.addEventListener('click', () => {
+  userScore = 0;
+  comScore = 0;
+  modalPreview.classList.add('hidden');
+  overlay.classList.add('hidden');
+  playerSign.textContent = '❔';
+  computerSign.textContent = '❔';
+  playerScore.textContent = userScore;
+  computerScore.textContent = comScore;
+  roundMessage.textContent = 'First 5 points will win!';
+  roundMessage.style.color = 'black';
+});
 // options to select, computer choice.
 const options = ['Rock', 'Paper', 'Scissor'];
 let userScore = 0;
@@ -14,6 +31,16 @@ let comScore = 0;
 let computerChoice = '';
 let playerChoice = '';
 let gameOver = false;
+
+clsBtnModal.addEventListener('click', () => {
+  modalPreview.classList.add('hidden');
+  overlay.classList.add('hidden');
+});
+
+overlay.addEventListener('click', () => {
+  modalPreview.classList.add('hidden');
+  overlay.classList.add('hidden');
+});
 
 btns.forEach(buttons => {
   buttons.addEventListener('click', () => {
@@ -46,8 +73,8 @@ function getFormatPlayerChoice(choice) {
 }
 
 function handleChoice(playerChoice, computerChoice) {
-  if (checkWinner() != false) {
-    console.log('Hello');
+  if (isGameOver()) {
+    checkWinner();
     return;
   }
 
@@ -150,14 +177,19 @@ function addScore(roundWinner) {
   checkWinner();
 }
 
+function isGameOver() {
+  return userScore === 5 || comScore === 5;
+}
 function checkWinner() {
   if (userScore === 5) {
-    resultWinner.textContent = 'Player Won!🥳';
-    return true;
+    modalResult.style.color = 'green';
+    modalResult.textContent = 'You Won!';
+    modalPreview.classList.remove('hidden');
+    overlay.classList.remove('hidden');
   } else if (comScore === 5) {
-    resultWinner.textContent = 'Computer Won!🥹';
-    return true;
-  } else {
-    return false;
+    modalResult.style.color = 'red';
+    modalResult.textContent = 'You Lose!';
+    modalPreview.classList.remove('hidden');
+    overlay.classList.remove('hidden');
   }
 }
