@@ -1,4 +1,4 @@
-const btns = document.querySelectorAll('#allButtons .buttons');
+const btns = document.querySelectorAll('#weaponButtons .buttons');
 let playerSign = document.querySelector('#player .sign');
 const playerScore = document.querySelector('#player .score');
 const computerScore = document.querySelector('#computer .score');
@@ -9,10 +9,18 @@ let gamelogResult = document.querySelector('#game-log .result');
 const modalPreview = document.querySelector('#modal');
 const modalResult = document.querySelector('#modal .result');
 const overlay = document.querySelector('#overlay');
-const clsBtnModal = document.querySelector('.close-modal');
+const closeBtnModal = document.querySelector('.close-modal');
 const playAgain = document.querySelector('.play-again');
+const restartButton = document.querySelector('.restart');
 
-playAgain.addEventListener('click', () => {
+// options to select, computer choice.
+const options = ['Rock', 'Paper', 'Scissor'];
+let userScore = 0;
+let comScore = 0;
+let computerChoice = '';
+let playerChoice = '';
+
+function restartGame() {
   userScore = 0;
   comScore = 0;
   modalPreview.classList.add('hidden');
@@ -23,16 +31,12 @@ playAgain.addEventListener('click', () => {
   computerScore.textContent = comScore;
   roundMessage.textContent = 'First 5 points will win!';
   roundMessage.style.color = 'black';
-});
-// options to select, computer choice.
-const options = ['Rock', 'Paper', 'Scissor'];
-let userScore = 0;
-let comScore = 0;
-let computerChoice = '';
-let playerChoice = '';
-let gameOver = false;
+}
 
-clsBtnModal.addEventListener('click', () => {
+playAgain.addEventListener('click', restartGame);
+restartButton.addEventListener('click', restartGame);
+
+closeBtnModal.addEventListener('click', () => {
   modalPreview.classList.add('hidden');
   overlay.classList.add('hidden');
 });
@@ -42,6 +46,7 @@ overlay.addEventListener('click', () => {
   overlay.classList.add('hidden');
 });
 
+// Weapon buttons event listeners
 btns.forEach(buttons => {
   buttons.addEventListener('click', () => {
     if (buttons.textContent === 'ROCK') {
