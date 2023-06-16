@@ -5,13 +5,15 @@ const computerScore = document.querySelector('#computer .score');
 let computerSign = document.querySelector('#computer .sign');
 let roundMessage = document.querySelector('#round-message');
 let resultWinner = document.querySelector('#winner');
-let gamelogResult = document.querySelector('#game-log .result');
 const modalPreview = document.querySelector('#modal');
 const modalResult = document.querySelector('#modal .result');
 const overlay = document.querySelector('#overlay');
 const closeBtnModal = document.querySelector('.close-modal');
 const playAgain = document.querySelector('.play-again');
 const restartButton = document.querySelector('.restart');
+const gamelog = document.querySelector('#game-log.result');
+const gameLogButton = document.querySelector('.game-log');
+const gamelogResult = document.querySelector('#game-log .result');
 
 // options to select, computer choice.
 const options = ['Rock', 'Paper', 'Scissor'];
@@ -20,9 +22,15 @@ let comScore = 0;
 let computerChoice = '';
 let playerChoice = '';
 
+gameLogButton.addEventListener('click', () => {
+  gamelog.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+});
+
 function restartGame() {
   userScore = 0;
   comScore = 0;
+  gamelogResult.textContent = '';
   modalPreview.classList.add('hidden');
   overlay.classList.add('hidden');
   playerSign.textContent = '❔';
@@ -43,6 +51,7 @@ closeBtnModal.addEventListener('click', () => {
 
 overlay.addEventListener('click', () => {
   modalPreview.classList.add('hidden');
+  gamelog.classList.add('hidden');
   overlay.classList.add('hidden');
 });
 
@@ -167,6 +176,7 @@ function gameLog(winner) {
   }
   gamelogResult.appendChild(newGamelogResult);
 }
+
 // add score and return a string of score.
 function addScore(roundWinner) {
   if (roundWinner == 'player') {

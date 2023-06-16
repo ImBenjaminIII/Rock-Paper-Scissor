@@ -36,18 +36,23 @@ main {
   flex-direction: column;
 }
 
+#game-log::-webkit-scrollbar {
+  display: none;
+}
 #game-log {
+  background-color: white;
+  position: absolute;
+  margin-top: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: scroll;
   border: 2px solid black;
-  width: 300px;
+  width: 350px;
+  height: 250px;
   padding: 20px;
   border-radius: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-#game-log .title {
-  text-align: center;
-  border-bottom: 2px solid black;
-  margin: 0;
 }
 
 #scoreboard {
@@ -111,6 +116,7 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   width: 25%;
   padding: 20px;
   background-color: white;
@@ -123,6 +129,12 @@ main {
 
 .hidden {
   display: none;
+}
+
+#game-log .heading h1 {
+  text-align: center;
+  border-bottom: 2px solid black;
+  margin: 0;
 }
 
 #modal .header {
