@@ -69,6 +69,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 20px;
 }
 
 .buttons {
@@ -196,9 +197,14 @@ h1.result {
     width: 150px;
     height: 50px;
     font-size: large;
+    flex-grow: 1;
   }
 
   .score-title {
     font-size: xx-large;
+  }
+
+  #weaponButtons {
+    justify-content: start;
   }
 }
