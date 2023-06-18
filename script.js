@@ -23,9 +23,15 @@ let computerChoice = '';
 let playerChoice = '';
 
 gameLogButton.addEventListener('click', () => {
+  buttonSound();
   gamelog.classList.remove('hidden');
   overlay.classList.remove('hidden');
 });
+
+function buttonSound() {
+  let sound = new Audio('button-click.mp3');
+  sound.play();
+}
 
 function restartGame() {
   userScore = 0;
@@ -39,6 +45,7 @@ function restartGame() {
   computerScore.textContent = comScore;
   roundMessage.textContent = 'First 5 points will win!';
   roundMessage.style.color = 'black';
+  buttonSound();
 }
 
 playAgain.addEventListener('click', restartGame);
@@ -58,6 +65,7 @@ overlay.addEventListener('click', () => {
 // Weapon buttons event listeners
 btns.forEach(buttons => {
   buttons.addEventListener('click', () => {
+    buttonSound();
     if (buttons.textContent === 'ROCK') {
       computerChoice = getComputerChoice();
       playerChoice = getFormatPlayerChoice(buttons.textContent);
