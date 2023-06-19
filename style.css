@@ -20,7 +20,7 @@ header {
 
 header h1 {
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: inline;
   font-size: 50px;
 }
@@ -30,6 +30,7 @@ footer {
   text-align: center;
   color: white;
   flex-grow: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 main {
@@ -188,8 +189,9 @@ h1.result {
   }
 
   header h1 {
-    font-size: large;
+    font-size: x-large;
     font-weight: 900;
+    padding: 10px;
   }
 
   .buttons {
@@ -201,11 +203,11 @@ h1.result {
 
   .scores-container {
     padding: 10px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
 
   .score-title {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 900;
   }
 
