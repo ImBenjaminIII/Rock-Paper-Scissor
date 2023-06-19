@@ -191,6 +191,11 @@ h1.result {
   header h1 {
     font-size: large;
     font-weight: 900;
+    padding: 20px;
+  }
+
+  .scores-container {
+    padding: 20px;
   }
 
   .buttons {
@@ -201,10 +206,15 @@ h1.result {
   }
 
   .score-title {
-    font-size: xx-large;
+    font-size: 25px;
+    font-weight: 900;
   }
 
   #weaponButtons {
     justify-content: start;
+  }
+
+  #game-log {
+    margin: 10px;
   }
 }
