@@ -186,6 +186,7 @@ h1.result {
   h1#winner {
     font-size: xx-large;
     font-weight: 900;
+    color: red;
   }
 
   header h1 {
