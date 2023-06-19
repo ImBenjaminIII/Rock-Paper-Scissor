@@ -1,8 +1,8 @@
 html {
-  height: 100%;
+  height: 100vh;
 }
 body {
-  height: 100%;
+  height: 100vh;
   padding: 0;
   margin: 0;
   display: flex;
@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  background-color: gray;
+  background-color: #393646;
   text-align: center;
   padding-top: 25px;
   padding-bottom: 25px;
@@ -19,23 +19,22 @@ header {
 }
 
 header h1 {
-  color: black;
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
   display: inline;
   font-size: 50px;
 }
 
 footer {
-  background-color: gray;
+  background-color: #393646;
   text-align: center;
   color: white;
   flex-grow: 0;
 }
 
 main {
-  height: 100%;
-  flex-grow: 1;
-  background-color: gainsboro;
+  height: 100vh;
+  background-color: #f9f5eb;
   display: flex;
   flex-direction: column;
 }
@@ -62,7 +61,7 @@ main {
 #scoreboard {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 #buttons {
@@ -77,7 +76,7 @@ main {
   font-weight: 900;
   color: white;
   font-size: xx-large;
-  background-color: burlywood;
+  background-color: #6d5d6e;
 }
 
 .scores-container {
@@ -183,6 +182,10 @@ h1.result {
     width: 80%;
   }
 
+  #scoreboard {
+    margin-bottom: 30px;
+  }
+
   h1#winner {
     font-size: xx-large;
     font-weight: 900;
@@ -202,6 +205,7 @@ h1.result {
 
   .scores-container {
     padding: 10px;
+    margin-bottom: 80px;
   }
 
   .score-title {
